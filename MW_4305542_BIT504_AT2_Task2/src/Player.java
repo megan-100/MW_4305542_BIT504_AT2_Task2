@@ -1,9 +1,7 @@
-import java.awt.*;
-
-//Enumeration for the players moves
+/**
+ * Enumeration for the players move
+ */
 
 public enum Player {
-    Empty,   // Represents an empty cell
-    Cross,   // Represents the player using "X"
-    Nought   // Represents the player using "O"
+	Empty, Cross, Nought
 }

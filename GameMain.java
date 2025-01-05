@@ -1,9 +1,17 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import Player.java;
 
 public class GameMain extends JPanel implements MouseListener {
+    /* Represents the current state of the game. */
+	public enum GameState {
+      Playing,      // The game is ongoing
+      Draw,         // The game is a draw
+      Cross_won,    // 'X' has won
+      Nought_won    // 'O' has won
+    }
+    private static final long serialVersionUID = 1L;
+
     // Constants for game 
     public static final int ROWS = 3;
     public static final int COLS = 3;

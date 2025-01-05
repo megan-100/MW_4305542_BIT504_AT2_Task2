@@ -3,6 +3,16 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class GameMain extends JPanel implements MouseListener {
+                
+    /* Represents the current state of the game. */
+    public enum GameState {
+                  Playing,      // The game is ongoing
+                  Draw,         // The game is a draw
+                  Cross_won,    // 'X' has won
+                  Nought_won    // 'O' has won
+                }
+    private static final long serialVersionUID = 1L;
+                
     // Constants for game 
     public static final int ROWS = 3;
     public static final int COLS = 3;
@@ -24,7 +34,8 @@ public class GameMain extends JPanel implements MouseListener {
 
     /** Constructor to set up the UI and game components on the panel */
     public GameMain() {
-        // Add MouseListener for mouse click events
+    
+                // Add MouseListener for mouse click events
         addMouseListener(this);
 
         // Set up the status bar (JLabel) to display the status message
@@ -44,7 +55,7 @@ public class GameMain extends JPanel implements MouseListener {
         // Create a new instance of the game "Board" class
         board = new Board();
 
-        // Initialise the game board
+        // Initialize the game board
         initGame();
     }
 
@@ -62,9 +73,10 @@ public class GameMain extends JPanel implements MouseListener {
         });
     }
 
+
     /** Custom painting code on this JPanel */
     public void paintComponent(Graphics g) {
-        // Fill the background and set colour to white
+        // Fill the background and set color to white
         super.paintComponent(g);
         setBackground(Color.WHITE);
 
@@ -91,7 +103,7 @@ public class GameMain extends JPanel implements MouseListener {
         }
     }
 
-    /** Initialise the game-board contents and the current status of GameState and Player */
+    /** Initialize the game-board contents and the current status of GameState and Player */
     public void initGame() {
         for (int row = 0; row < ROWS; ++row) {
             for (int col = 0; col < COLS; ++col) {
