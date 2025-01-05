@@ -12,7 +12,7 @@ public class Cell {
     /** Constructor to initialise this cell with the specified row and column */
     public Cell(int row, int col) {
         this.row = row; // Initialise row
-        this.col = col; // Initialise col
+        this.col = col; // Initialise column
         this.content = Player.Empty; // Set the default content of the cell to empty
     }
 
@@ -37,8 +37,8 @@ public class Cell {
         }
     }
 
-    /** Set this cell's content to EMPTY */
+    /** Set this cell's content to empty */
     public void clear() {
-        content = Player.Empty; // Set content to Empty
+        content = Player.Empty; // Set content to empty
     }
 }
